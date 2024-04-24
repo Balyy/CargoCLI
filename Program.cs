@@ -10,6 +10,16 @@ namespace CargoCLI
     {
         static void Main(string[] args)
         {
+            CargoRepository.Path = "cargo.csv";
+
+            List<Cargo> cargos = CargoRepository.FindAll();
+
+            foreach (Cargo cargo in cargos)
+            {
+                Console.WriteLine(cargo);
+            }
+
+            Console.ReadKey();
         }
     }
 }

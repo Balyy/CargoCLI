@@ -8,7 +8,7 @@ namespace CargoCLI
 {
     class Cargo
     {
-        private static int nextId = -1;
+        public static int nextId = -1;
 
         public int Id { get; set; }
         public DateTime Date { get; set; }
@@ -19,7 +19,7 @@ namespace CargoCLI
 
         public override string ToString()
         {
-            return $"Cargo<{Date};{DeparturePlanet};{Destination};{Goods};{Quantity}>";
+            return $"Cargo<{Id};{Date.ToShortDateString()};{DeparturePlanet};{Destination};{Goods};{Quantity}>";
         }
 
         public string ToCSVLine()

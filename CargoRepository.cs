@@ -50,11 +50,16 @@ namespace CargoCLI
 
         public static void Save(Cargo cargo)
         {
+            List<Cargo> cargos = FindAll();
+            cargos.Add(cargo);
+            Cargo.nextId = -1;
             using (StreamWriter writer = new StreamWriter(Path))
             {
-                writer.WriteLine(cargo.ToCSVLine());
+                foreach (var item in cargos)
+                {
+                    writer.WriteLine(item.ToCSVLine());
+                }
             }
         }
-
     }
 }
