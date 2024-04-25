@@ -19,6 +19,15 @@ namespace CargoCLI
                 Console.WriteLine(cargo);
             }
 
+            Console.WriteLine();
+           
+            Console.WriteLine(CargoRepository.FindById(65));
+
+            if (CargoRepository.FindById(1) == null)
+            {
+                Console.WriteLine("null");
+            }
+
             Console.ReadKey();
         }
     }

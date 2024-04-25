@@ -37,7 +37,8 @@ namespace CargoCLI
 
         public static Cargo FindById(int id)
         {
-            foreach (Cargo cargo in FindAll())
+            List<Cargo> cargos = FindAll();
+            foreach (Cargo cargo in cargos)
             {
                 if (cargo.Id == id)
                 {
